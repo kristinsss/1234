@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <linkrel="stylesheet" href="css.css">
+</head>
+<body>
+    <div id="container">
+        <div id="hello-vue" class="demo">
+          {{ message }}
+        </div>
+        <div id="new_zapisi">
+          <textarea id ="new_zapis" v-model="new_zapis" v-on:keyup="count_simb" :style="{background : back}"></textarea>
+          <div>{{simb}}/{{max}}</div>
+          <button id="but" v-on:click="add_zapis" v-if="new_zapis != ''">{{ message }}</button>
+          <button id="but2" v-else>{{ message }}</button>
+          <div v-if="!ifAnyZapisi" id="net">Записей пока нет</div>
+          <div v-else id="kolvo">
+            <div>{{i}}</div>
+            <div v-if="i == 1">Запись</div>
+            <div v-else-if="i < 5">Записи</div>
+            <div v-else>Записей</div>
+          </div>
+          <div id = "comments"></div>
+        </div>
+        </div>
+        <script src="vue.js">
+
+        </script>
+</body>
+</html>
